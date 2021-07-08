@@ -27,17 +27,25 @@ Source: <a herf="https//www.healthline.com">https//www.healthline.com</a>
 <br><br>
 
 <ion-item>
-<ion-label> Activity: </ion-label> 
+<ion-label color="dark"> Activity </ion-label>
+<ion-select interface="popover" [(ngModel)]="gender">
+  <ion-option value="a">Washing Dishes</ion-option>
+  <ion-option value="b">Hathing Yoga</ion-option>
+  <ion-option value="c">Golf</ion-option>
+  <ion-option value="d">Swimming</ion-option>
+  <ion-option value="e">Running</ion-option>
+  <ion-option value="f">Bicycling</ion-option>
+</ion-select>
+</ion-item>
+
+
+<ion-item>
+<ion-label color="dark"> Weight in Kilogram: </ion-label> 
 <ion-input type= "number"></ion-input>
 </ion-item> 
 
 <ion-item>
-<ion-label> Weight in Kilogram: </ion-label> 
-<ion-input type= "number"></ion-input>
-</ion-item> 
-
-<ion-item>
-<ion-label> Duration in minutes: </ion-label> 
+<ion-label color="dark"> Duration in Minutes: </ion-label> 
 <ion-input type= "number">[(ngModel)]="height"</ion-input>
 </ion-item> 
 <button ion-button color="secondary">COMPUTE</button>

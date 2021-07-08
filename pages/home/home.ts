@@ -3,12 +3,14 @@ import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  styleUrls:["home.css"]
 })
 
 export class HomePage {
-  activity: number;
+  activity: string;
   cbc: number;
+  MET: number;
   weight: number;
   duration: number;
   cbcMessage: string;
@@ -20,11 +22,18 @@ export class HomePage {
     this.cbc = this.weight/ (this.activity* 3.5*this.weight/200);
     this.cbc = parseFloat(this.cbc.toFixed(3));
     
-    if (this.cbc< 3.0) {
-      this.cbcMessage = "Light";
-    } else if (this.cbc >= 18.5 && this.cbc <3.0-6.0) { 
-    this.cbcMessage = "Moderate";
-    } else if (this.cbc>= 25 && this.cbc >6.0){
-      this.cbcMessage = "Vigorous";      }
-}
+    if (this.activity== "a") {
+      this.MET = 2.2;
+    } else if (this.activity== "b") { 
+    this.MET = 2.5;
+  } else if (this.activity== "c") { 
+    this.MET = 4.5;
+  } else if (this.activity== "d"){ 
+    this.MET = 6;
+  } else if (this.activity== "e") { 
+    this.MET = 11.5 ;
+  } else if (this.activity== "f") { 
+    this.MET = 8;
+  }
+  }
 }
