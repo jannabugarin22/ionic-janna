@@ -19,8 +19,7 @@ export class HomePage {
 
 
   calculateCBC(){
-    this.cbc = this.weight/ (this.activity* 3.5*this.weight/200);
-    this.cbc = parseFloat(this.cbc.toFixed(3));
+  
     
     if (this.activity== "a") {
       this.MET = 2.2;
@@ -35,5 +34,7 @@ export class HomePage {
   } else if (this.activity== "f") { 
     this.MET = 8;
   }
+  this.cbc = (this.MET* 3.5*this.weight/200)* this.duration;
+  this.cbc = parseFloat(this.cbc.toFixed(3));
   }
 }
