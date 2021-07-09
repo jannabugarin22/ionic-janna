@@ -10,6 +10,7 @@ import { NavController } from 'ionic-angular';
 export class HomePage {
   activity: string;
   cbc: number;
+  wtl: number;
   MET: number;
   weight: number;
   duration: number;
@@ -35,6 +36,11 @@ export class HomePage {
     this.MET = 8;
   }
   this.cbc = (this.MET* 3.5*this.weight/200)* this.duration;
-  this.cbc = parseFloat(this.cbc.toFixed(3));
+  this.cbc = parseFloat(this.cbc.toFixed(3));{
+
+    this.wtl = (this.cbc/7700);
+    this.wtl= parseFloat(this.wtl.toFixed(3));  
   }
+  }
+  
 }
